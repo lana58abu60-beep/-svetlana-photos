@@ -55,21 +55,7 @@
     display: block; filter: saturate(.95); transition: transform .3s, box-shadow .3s;
   }
   .thumbs img:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
-  .about-wrap {
-    display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;
-  }
-  .about-wrap .about-text { flex: 1 1 380px; max-width: 640px; }
-  .about-wrap .about-text p { margin-bottom: 16px; color: #4a463f; }
-  .about-photo {
-    flex: 0 1 320px;
-  }
-  .about-photo img {
-    width: 100%; display: block; border-radius: 4px;
-    filter: saturate(.95); box-shadow: 0 8px 24px rgba(0,0,0,.10);
-  }
-  .about-photo figcaption {
-    color: #8a857c; font-style: italic; font-size: .9rem; margin-top: 8px; text-align: center;
-  }
+  #about p { max-width: 640px; margin-bottom: 16px; color: #4a463f; }
   #contacts p { margin-bottom: 10px; }
   #contacts a { color: #2c2a26; text-decoration: underline; text-underline-offset: 3px; }
   .muted { color: #8a857c; font-style: italic; }
@@ -178,10 +164,9 @@
       <p>В каждой серии стремлюсь к простоте — убрать лишнее, оставить то, что рассказывает историю. Здесь собраны избранные работы последних лет.</p>
       <p>Сейчас прохожу курс по вайбкодингу и собираю портфолио, чтобы показывать свои кадры так же честно, как и снимать.</p>
     </div>
-    <figure class="about-photo">
+    <div class="about-photo">
       <img src="images/svetlana.jpg" alt="Светлана">
-      <figcaption>автопортрет</figcaption>
-    </figure>
+    </div>
   </div>
 </section>
 
