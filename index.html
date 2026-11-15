@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Фотографии Светланы</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #faf8f5;
+    color: #2c2a26;
+    line-height: 1.7;
+  }
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250,248,245,.95);
+    border-bottom: 1px solid #e5e0d8;
+    padding: 18px 6%;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .brand { font-size: 1.15rem; letter-spacing: .12em; text-transform: uppercase; }
+  nav a {
+    color: #6b675f; text-decoration: none; margin-left: 28px;
+    font-size: .95rem; letter-spacing: .06em;
+  }
+  nav a:hover { color: #2c2a26; }
+  .hero {
+    text-align: center; padding: 90px 8% 70px;
+    border-bottom: 1px solid #e5e0d8;
+  }
+  .hero h1 { font-weight: 400; font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 14px; }
+  .hero p { color: #8a857c; font-style: italic; }
+  .hero .btn {
+    display: inline-block; margin-top: 30px; padding: 12px 34px;
+    border: 1px solid #2c2a26; color: #2c2a26; text-decoration: none;
+    letter-spacing: .1em; font-size: .9rem; text-transform: uppercase;
+    transition: all .25s;
+  }
+  .hero .btn:hover { background: #2c2a26; color: #faf8f5; }
+  section { padding: 70px 8%; }
+  #portfolio { padding-bottom: 20px; }
+  h2 {
+    font-weight: 400; font-size: 1.7rem; margin-bottom: 36px;
+    letter-spacing: .05em;
+  }
+  .series { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin-bottom: 40px; }
+  .series h3 {
+    font-weight: 400; font-size: 1.25rem; margin-bottom: 6px; letter-spacing: .04em;
+  }
+  .series p.desc { color: #8a857c; font-size: .95rem; margin-bottom: 18px; }
+  .thumbs { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+  .thumbs img {
+    width: 100%; aspect-ratio: 4/3; object-fit: cover; cursor: pointer;
+    display: block; filter: saturate(.95); transition: transform .3s, box-shadow .3s;
+  }
+  .thumbs img:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+  #about p { max-width: 640px; margin-bottom: 16px; color: #4a463f; }
+  #contacts p { margin-bottom: 10px; }
+  #contacts a { color: #2c2a26; text-decoration: underline; text-underline-offset: 3px; }
+  .muted { color: #8a857c; font-style: italic; }
+  footer {
+    text-align: center; padding: 34px; color: #a09a90; font-size: .85rem;
+    border-top: 1px solid #e5e0d8;
+  }
+  /* Lightbox */
+  #lightbox {
+    position: fixed; inset: 0; background: rgba(20,18,15,.94);
+    display: none; z-index: 100; align-items: center; justify-content: center;
+    flex-direction: column;
+  }
+  #lightbox.open { display: flex; }
+  #lb-img { max-width: 88vw; max-height: 78vh; object-fit: contain; }
+  #lb-cap { color: #d8d3ca; margin-top: 14px; font-style: italic; font-size: 1rem; }
+  .lb-btn {
+    position: absolute; background: none; border: none; color: #faf8f5;
+    font-size: 2.4rem; cursor: pointer; padding: 14px; opacity: .7;
+  }
+  .lb-btn:hover { opacity: 1; }
+  #lb-close { top: 10px; right: 16px; }
+  #lb-prev { left: 8px; top: 50%; transform: translateY(-50%); }
+  #lb-next { right: 8px; top: 50%; transform: translateY(-50%); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">Светлана</div>
+  <nav>
+    <a href="#portfolio">Портфолио</a>
+    <a href="#about">Обо мне</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Фотографии Светланы: моменты, которые хочется сохранить</h1>
+  <p>Портфолио и серии работ в минималистичном стиле</p>
+  <a class="btn" href="#portfolio">Смотреть портфолио</a>
+</div>
+
+<section id="portfolio">
+  <h2>Портфолио</h2>
+
+  <div class="series">
+    <h3>Горный Алтай</h3>
+    <p class="desc">Долина Катуни, перевалы и утренний свет. Серия о тишине гор — без людей, только место.</p>
+    <div class="thumbs">
+      <img src="images/katun.jpg" alt="Катунь" data-cap="Катунь">
+      <img src="images/rainbow-clouds.jpg" alt="Радужные облака" data-cap="Радужные облака">
+      <img src="images/rainbow-clouds-1.jpg" alt="Радужные облака" data-cap="Радужные облака">
+    </div>
+  </div>
+
+  <div class="series">
+    <h3>Портреты</h3>
+    <p class="desc">Портреты без позирования: разговор, пауза, взгляд в сторону.</p>
+    <div class="thumbs">
+      <img src="images/svetlana.jpg" alt="Портрет" data-cap="Автопортрет">
+      <img src="images/cat.jpg" alt="Кошка" data-cap="Модель не позирует">
+    </div>
+  </div>
+
+  <div class="series">
+    <h3>Город</h3>
+    <p class="desc">Горно-Алтайск и окрестности: будни, детали, случайная геометрия.</p>
+    <div class="thumbs">
+      <img src="images/gurkin.jpg" alt="Мурал Гуркина" data-cap="Гуркин на мурале">
+      <img src="images/fountain.jpg" alt="Фонтан" data-cap="Флейтист">
+      <img src="images/sun.jpg" alt="Солнце" data-cap="Солнце">
+      <img src="images/parrot.jpg" alt="Осенний попугай" data-cap="Осенний попугай">
+    </div>
+  </div>
+
+  <div class="series">
+    <h3>Птицы</h3>
+    <p class="desc">Голуби, снегири и свиристели — соседи по двору и парку.</p>
+    <div class="thumbs">
+      <img src="images/pigeons.jpg" alt="Голуби" data-cap="Голуби">
+      <img src="images/bullfinches.jpg" alt="Снегири" data-cap="Снегири">
+      <img src="images/waxwings.jpg" alt="Свиристели" data-cap="Свиристели">
+    </div>
+  </div>
+
+  <div class="series">
+    <h3>Цветы и травы</h3>
+    <p class="desc">Крупные планы растений и случайные встречи с их обитателями.</p>
+    <div class="thumbs">
+      <img src="images/hemp-nettle.jpg" alt="Пикульник" data-cap="Пикульник">
+      <img src="images/hemp-nettle-1.jpg" alt="Пикульник" data-cap="Пикульник">
+      <img src="images/hemp-nettle-2.jpg" alt="Пикульник" data-cap="Пикульник">
+      <img src="images/pear.jpg" alt="Груша" data-cap="Груша">
+      <img src="images/bird-cherry.jpg" alt="Черёмуха" data-cap="Черёмуха">
+      <img src="images/oats.jpg" alt="Овёс" data-cap="Овёс">
+      <img src="images/bee.jpg" alt="Пчела" data-cap="Случайная встреча">
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>Обо мне</h2>
+  <p>Я Светлана, снимаю пейзажи, портреты и городские сюжеты. Больше всего люблю работать на Алтае: там свет и тишина сами подсказывают композицию.</p>
+  <p>В каждой серии стремлюсь к простоте — убрать лишнее, оставить то, что рассказывает историю. Здесь собраны избранные работы последних лет.</p>
+  <p>Сейчас прохожу курс по вайбкодингу и собираю портфолио, чтобы показывать свои кадры так же честно, как и снимать.</p>
+</section>
+
+<section id="contacts">
+  <h2>Контакты</h2>
+  <p>Почта: <a href="mailto:k4z-nbra@yandex.ru">k4z-nbra@yandex.ru</a></p>
+  <p>Telegram: <a href="https://t.me/lanasvet58_bot">@lanasvet58_bot</a></p>
+  <p class="muted">Написать в WhatsApp (ссылка будет позже)</p>
+  <p class="muted">Отвечаю обычно в течение дня.</p>
+</section>
+
+<footer>
+  © Светлана, 2026. Все фотографии — авторские.
+</footer>
+
+<div id="lightbox">
+  <button class="lb-btn" id="lb-close">&times;</button>
+  <button class="lb-btn" id="lb-prev">&#10094;</button>
+  <img id="lb-img" src="" alt="">
+  <div id="lb-cap"></div>
+  <button class="lb-btn" id="lb-next">&#10095;</button>
+</div>
+
+<script>
+  const thumbs = Array.from(document.querySelectorAll('.thumbs img'));
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  const lbCap = document.getElementById('lb-cap');
+  let idx = 0;
+  function show(i) {
+    idx = (i + thumbs.length) % thumbs.length;
+    lbImg.src = thumbs[idx].src;
+    lbCap.textContent = thumbs[idx].dataset.cap || '';
+  }
+  thumbs.forEach((img, i) => img.addEventListener('click', () => { show(i); lb.classList.add('open'); }));
+  document.getElementById('lb-close').onclick = () => lb.classList.remove('open');
+  document.getElementById('lb-prev').onclick = () => show(idx - 1);
+  document.getElementById('lb-next').onclick = () => show(idx + 1);
+  lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') lb.classList.remove('open');
+    if (e.key === 'ArrowLeft') show(idx - 1);
+    if (e.key === 'ArrowRight') show(idx + 1);
+  });
+</script>
+
+</body>
+</html>
